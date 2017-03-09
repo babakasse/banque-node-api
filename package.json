@@ -1,0 +1,16 @@
+{
+  "name": "kcbank",
+  "version": "1.0.0",
+  "description": "Application banquaire",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+  	"express":"*",
+  	"body-parser":"*",
+  	"mongoose":"*"
+  },
+  "author": "Baba KASSE",
+  "license": "ISC"
+}

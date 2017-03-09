@@ -1,0 +1,26 @@
+<a href="#/users">Accueil</a>
+<div class="panel panel-default" ng-init="getUser()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{user.prenom}} {{user.nom}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{user.image_url}}">
+      </div>
+      <div class="col-md-8">
+        </p>{{user.description}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Sexe: {{user.sexe}}</li>
+          <li class="list-group-item">Age: {{user.age}}</li>
+          <li class="list-group-item">Numero de compte: {{user.numero_compte}}</li>
+          <li class="list-group-item">Identifiant: {{user.motdepasse}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/users/edit/{{user._id}}">Modifier</a> |  <a href="#" ng-click="removeUser(user._id)">Delete</a>
+</div>

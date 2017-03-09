@@ -1,0 +1,26 @@
+<div class="panel panel-default" ng-init="getUsers()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Liste des utilisateurs</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+    	<div ng-repeat="user in users">
+    		<div class="col-md-6">
+    			<div class="col-md-6">
+    				<h4>{{user.prenom}}</h4>
+    				<p>{{user.nom}}</p>
+                    <p>{{user.age}}</p>
+                    <p>{{user.sexe}}</p>
+                    <p>{{user.numero_compte}}</p>
+                    <p>{{user.identifiant}}</p>
+                    <p>{{user.motdepasse}}</p>
+    				<a class="btn btn-primary" href="#/users/details/{{user._id}}">Voir plus de details</a>
+    			</div>
+    			<div class="col-md-6">
+    				<img class="thumbnail" src="{{user.image_url}}">
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
