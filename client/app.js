@@ -2,24 +2,24 @@ var myApp = angular.module('myApp',['ngRoute']);
 
 myApp.config(function($routeProvider){
 	$routeProvider.when('/', {
-		controller:'BooksController',
-		templateUrl: 'views/book/books.html'
+		controller:'ArticlesController',
+		templateUrl: 'views/article/articles.html'
 	})
-	.when('/books', {
-		controller:'BooksController',
-		templateUrl: 'views/book/books.html'
+	.when('/articles', {
+		controller:'ArticlesController',
+		templateUrl: 'views/article/articles.html'
 	})
-	.when('/books/details/:id',{
-		controller:'BooksController',
-		templateUrl: 'views/book/book_details.html'
+	.when('/articles/details/:id',{
+		controller:'ArticlesController',
+		templateUrl: 'views/article/article_details.html'
 	})
-	.when('/books/add',{
-		controller:'BooksController',
-		templateUrl: 'views/book/add_book.html'
+	.when('/articles/add',{
+		controller:'ArticlesController',
+		templateUrl: 'views/article/add_article.html'
 	})
-	.when('/books/edit/:id',{
-		controller:'BooksController',
-		templateUrl: 'views/book/edit_book.html'
+	.when('/articles/edit/:id',{
+		controller:'ArticlesController',
+		templateUrl: 'views/article/edit_article.html'
 	})
 
 	.when('/users', {
@@ -40,13 +40,13 @@ myApp.config(function($routeProvider){
 	})
 
 	.when('/login',{
-		controller:'AuthentificationController',
-		templateUrl: 'views/authentification/login.html'
+		controller:'UsersController',
+		templateUrl: 'views/login.html'
 	})
 
 	.when('/register',{
-		controller:'AuthentificationController',
-		templateUrl: 'views/authentification/register.html'
+		controller:'UsersController',
+		templateUrl: 'views/user/add_user.html'
 	})
 	.otherwise({
 		redirectTo: '/'

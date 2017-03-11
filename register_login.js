@@ -1,18 +1,19 @@
-var myApp = angular.module('myApp');
+var express = require('express');
+var router = express.Router();
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
-myApp.controller('AuthentificationController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams){
-	console.log('AuthentificationController loaded...');
+var User = require('../models/user');
 
 // Register User
-$scope.registerUser = function(){
-		console.log($scope.user);
-		$http.post('/api/users/', $scope.user).success(function(response){
-		window.location.href='#/users';
-	});
-}
+router.post('/register', function(req, res){
+	var name = req.body.name;
+	var email = req.body.email;
+	var username = req.body.username;
+	var password = req.body.password;
+	var password2 = req.body.password2;
 
 	// Validation
-	/*
 	req.checkBody('name', 'Name is required').notEmpty();
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('email', 'Email is not valid').isEmail();
@@ -43,9 +44,8 @@ $scope.registerUser = function(){
 
 		res.redirect('/login');
 	}
-};*/
+});
 
-/*
 passport.use(new LocalStrategy(
   function(username, password, done) {
    User.getUserByUsername(username, function(err, user){
@@ -73,6 +73,20 @@ passport.deserializeUser(function(id, done) {
   User.getUserById(id, function(err, user) {
     done(err, user);
   });
-}); */
+});
 
-}]);
+router.post('/login',
+  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login',failureFlash: true}),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+router.get('/logout', function(req, res){
+	req.logout();
+
+	//req.flash('success_msg', 'You are logged out');
+
+	res.redirect('/login');
+});
+
+module.exports = router;

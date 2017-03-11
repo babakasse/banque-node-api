@@ -14,16 +14,17 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 
+
 // Set static folder
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
 
 Genre =require('./models/genre');
-Book =require('./models/book');
+Article =require('./models/article');
 User =require('./models/user');
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/bookstore');
+mongoose.connect('mongodb://localhost/kcbankdb');
 var db = mongoose.connection;
 
 // BodyParser Middleware
@@ -76,7 +77,7 @@ app.use(function (req, res, next) {
 
 
 app.get('/', (req, res) => {
-	res.send('Please use /api/books or /api/genres');
+	res.send('Please use /articles or /users');
 });
 
 app.get('/api/genres', (req, res) => {
@@ -119,52 +120,52 @@ app.delete('/api/genres/:_id', (req, res) => {
 	});
 });
 
-app.get('/api/books', (req, res) => {
-	Book.getBooks((err, books) => {
+app.get('/api/articles', (req, res) => {
+	Article.getArticles((err, articles) => {
 		if(err){
 			throw err;
 		}
-		res.json(books);
+		res.json(articles);
 	});
 });
 
-app.get('/api/books/:_id', (req, res) => {
-	Book.getBookById(req.params._id, (err, book) => {
+app.get('/api/articles/:_id', (req, res) => {
+	Article.getArticleById(req.params._id, (err, article) => {
 		if(err){
 			throw err;
 		}
-		res.json(book);
+		res.json(article);
 	});
 });
 
-app.post('/api/books', (req, res) => {
-	var book = req.body;
-	Book.addBook(book, (err, book) => {
+app.post('/api/articles', (req, res) => {
+	var article = req.body;
+	Article.addArticle(article, (err, article) => {
 		if(err){
 			throw err;
 		}
-		res.json(book);
+		res.json(article);
 	});
 });
 
-app.put('/api/books/:_id', (req, res) => {
+app.put('/api/articles/:_id', (req, res) => {
 	var id = req.params._id;
-	var book = req.body;
-	Book.updateBook(id, book, {}, (err, book) => {
+	var article = req.body;
+	Article.updateArticle(id, article, {}, (err, article) => {
 		if(err){
 			throw err;
 		}
-		res.json(book);
+		res.json(article);
 	});
 });
 
-app.delete('/api/books/:_id', (req, res) => {
+app.delete('/api/articles/:_id', (req, res) => {
 	var id = req.params._id;
-	Book.removeBook(id, (err, book) => {
+	Article.removeArticle(id, (err, article) => {
 		if(err){
 			throw err;
 		}
-		res.json(book);
+		res.json(article);
 	});
 });
 
@@ -203,7 +204,7 @@ app.put('/api/users/:_id', (req, res) => {
 		if(err){
 			throw err;
 		}
-		res.json(book);
+		res.json(article);
 	});
 });
 

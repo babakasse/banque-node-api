@@ -1,31 +1,43 @@
-<a href="#/books">Go Back</a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Inscrition sur KC BANK</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-12">
-      <form ng-submit="addUser()">
+<a href="#/">Accueil</a>
+<hr>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form ng-submit="addUser()" class="form-horizontal">
+        <h1>INSCRIPTION</h1>
         <div class="form-group">
-          <label>identifiant</label>
+          <label>Nom d'utilisateur</label>
+          <div class="input-group">
+             <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>   
           <input type="text" class="form-control" ng-model="user.identifiant" placeholder="indentifiant">
+          </div>
         </div>
         <div class="form-group">
           <label>Mot de passe</label>
-          <input type="password" class="form-control" ng-model="user.motdepasse" placeholder="Mot de passe">
+          <div class="input-group">
+             <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span> 
+              <input type="password" class="form-control" ng-model="user.motdepasse" placeholder="Mot de passe">
+          </div>
         </div>
         <div class="form-group">
           <label>Nom</label>
+          <div class="input-group">
+             <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span> 
           <input type="text" class="form-control" ng-model="user.nom" placeholder="Nom">
+          </div>
         </div>
         <div class="form-group">
           <label>Prenom</label>
+          <div class="input-group">
+             <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span> 
           <input type="text" class="form-control" ng-model="user.prenom" placeholder="Prenom">
+          </div>
         </div>
          <div class="form-group">
           <label>Adresse email</label>
+          <div class="input-group">
+             <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span> 
           <input type="email" class="form-control" ng-model="user.email" placeholder="Example@example.com">
+          </div>
         </div>
         <div class="form-group">Age</label>
           <input type="text" class="form-control" ng-model="user.age" placeholder="Votre age en chiffre">
@@ -33,9 +45,9 @@
          <div class="form-group">
           <label>Sexe</label>
           <select ng-model="user.sexe" class="form-control">
-            <option value="Suspense">Homme</option>
-            <option value="Drama">Femme</option>
-            <option value="Romance">Autre</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="autre">Autre</option>
           </select>
         </div>
         <div class="form-group">
@@ -47,7 +59,7 @@
           <input type="text" class="form-control" ng-model="user.image_url" placeholder="Image URL">
         </div>
        
-        <button type="submit" class="btn btn-default">Enregistrer</button>
+        <button type="submit" class="btn btn-default ">Enregistrer</button>
       </form>
     </div>
     </div>

@@ -17,7 +17,7 @@ myApp.controller('UsersController', ['$scope', '$http', '$location', '$routePara
 	}
 
 	$scope.addUser = function(){
-		console.log($scope.book);
+		console.log($scope.user);
 		$http.post('/api/users/', $scope.user).success(function(response){
 			window.location.href='#/users';
 		});

@@ -1,0 +1,28 @@
+<a href="#/articles">Accueil</a>
+<div class="panel panel-default" ng-init="getArticle()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{article.title}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{article.image_url}}">
+      </div>
+      <div class="col-md-8">
+        </p>{{article.description}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Genre: {{article.genre}}</li>
+          <li class="list-group-item">Author: {{article.author}}</li>
+          <li class="list-group-item">Publisher: {{article.publisher}}</li>
+          <li class="list-group-item">Pages: {{article.pages}}</li>
+        </ul>
+        <a target="_blank" href="{{article.buy_url}}" class="btn btn-primary">Buy on Amazon</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/articles/edit/{{article._id}}">Edit</a> |  <a href="#" ng-click="removeArticle(article._id)">Delete</a>
+</div>
+  

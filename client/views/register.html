@@ -4,43 +4,44 @@
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
 
-      <form method="post" action="/register" class="form-horizontal">
+      <form ng-submit="addUser()" class="form-horizontal">
       
         <h1>CREATION DE COMPTE</h1>
           <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span> 
-               <input type="text" class="form-control" placeholder="Nom" name="nom">
+               <input type="text" class="form-control" ng-model="user.nom" placeholder="Nom">
             </div>
           </div>
+           
           <div class="form-group">
            <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                <input type="text" class="form-control" placeholder="Prenom" name="prenom">
+                <input type="text" class="form-control" placeholder="Prenom" ng-model="user.prenom">
            </div>
           </div>
           <div class="form-group">
              <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                <input type="email" class="form-control" placeholder="example@example.com" name="email">
+                <input type="email" class="form-control" placeholder="example@example.com" placeholder="user.email">
              </div>
           </div>
           <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                <input type="text" class="form-control" placeholder="Nom d'utilisateur'" name="identifiant">
+                <input type="text" class="form-control" placeholder="Nom d'utilisateur" ng-model="user.identifiant">
             </div>
           </div>
           <div class="form-group">
              <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                <input type="password" class="form-control" placeholder="Mot de passe" name="motdepasse">
+                <input type="password" class="form-control" placeholder="Mot de passe" ng-model="user.motdepasse">
              </div>
           </div>
           <div class="form-group">
              <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                <input type="password" class="form-control" placeholder="Confirmer mot de passe" name="motdepasse_2">
+                <input type="password" class="form-control" placeholder="Confirmer mot de passe" name="password2">
              </div>
           </div>
           <div class="row">
