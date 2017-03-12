@@ -6,10 +6,6 @@ const articleSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	genre:{
-		type: String,
-		required: true
-	},
 	description:{
 		type: String
 	},
@@ -17,16 +13,7 @@ const articleSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	publisher:{
-		type: String
-	},
-	pages:{
-		type: String
-	},
 	image_url:{
-		type: String
-	},
-	buy_url:{
 		type: String
 	},
 	create_date:{
@@ -57,13 +44,9 @@ module.exports.updateArticle = (id, article, options, callback) => {
 	var query = {_id: id};
 	var update = {
 		title: article.title,
-		genre: article.genre,
 		description: article.description,
 		author: article.author,
-		publisher: article.publisher,
-		pages: article.pages,
-		image_url: article.image_url,
-		buy_url: article.buy_url
+		image_url: article.image_url
 	}
 	Article.findOneAndUpdate(query, update, options, callback);
 }

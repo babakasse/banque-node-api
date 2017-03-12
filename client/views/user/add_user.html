@@ -1,5 +1,4 @@
 <a href="#/">Accueil</a>
-<hr>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <form ng-submit="addUser()" class="form-horizontal">
@@ -51,8 +50,12 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Numero de compte</label>
-          <input type="text" class="form-control" ng-model="user.numero_compte" placeholder="Votre numero de compte">
+          <label>N° Compte courant</label>
+          <input type="text" class="form-control" ng-model="user.compte_courant" placeholder="Votre numero de compte courant">
+        </div>
+        <div class="form-group">
+          <label>N° de compte Livret A</label>
+          <input type="text" class="form-control" ng-model="user.livret_a" placeholder="Votre numero de compte Livret A">
         </div>
         <div class="form-group">
           <label>Image URL</label>

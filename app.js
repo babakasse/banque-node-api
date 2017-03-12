@@ -19,7 +19,7 @@ var mongo = require('mongodb');
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
 
-Genre =require('./models/genre');
+Compte =require('./models/compte');
 Article =require('./models/article');
 User =require('./models/user');
 
@@ -80,43 +80,52 @@ app.get('/', (req, res) => {
 	res.send('Please use /articles or /users');
 });
 
-app.get('/api/genres', (req, res) => {
-	Genre.getGenres((err, genres) => {
+app.get('/api/comptes', (req, res) => {
+	Compte.getComptes((err, comptes) => {
 		if(err){
 			throw err;
 		}
-		res.json(genres);
+		res.json(comptes);
 	});
 });
 
-app.post('/api/genres', (req, res) => {
-	var genre = req.body;
-	Genre.addGenre(genre, (err, genre) => {
+app.get('/api/comptes/:_id', (req, res) => {
+	Compte.getCompteById(req.params._id, (err, compte) => {
 		if(err){
 			throw err;
 		}
-		res.json(genre);
+		res.json(compte);
 	});
 });
 
-app.put('/api/genres/:_id', (req, res) => {
+app.post('/api/comptes', (req, res) => {
+	var compte = req.body;
+	Compte.addCompte(compte, (err, compte) => {
+		if(err){
+			throw err;
+		}
+		res.json(compte);
+	});
+});
+
+app.put('/api/comptes/:_id', (req, res) => {
 	var id = req.params._id;
-	var genre = req.body;
-	Genre.updateGenre(id, genre, {}, (err, genre) => {
+	var compte = req.body;
+	Compte.updateCompte(id, compte, {}, (err, compte) => {
 		if(err){
 			throw err;
 		}
-		res.json(genre);
+		res.json(compte);
 	});
 });
 
-app.delete('/api/genres/:_id', (req, res) => {
+app.delete('/api/comptes/:_id', (req, res) => {
 	var id = req.params._id;
-	Genre.removeGenre(id, (err, genre) => {
+	Compte.removeCompte(id, (err, compte) => {
 		if(err){
 			throw err;
 		}
-		res.json(genre);
+		res.json(compte);
 	});
 });
 
@@ -204,7 +213,7 @@ app.put('/api/users/:_id', (req, res) => {
 		if(err){
 			throw err;
 		}
-		res.json(article);
+		res.json(user);
 	});
 });
 

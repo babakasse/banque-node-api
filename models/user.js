@@ -10,6 +10,9 @@ const userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	type:{
+		type: String
+	},
 	email:{
 		type: String,
         required:true
@@ -31,7 +34,10 @@ const userSchema = mongoose.Schema({
 	image_url:{
 		type: String
 	},
-	numero_compte:{
+	compte_courant:{
+		type: String
+	},
+	livret_a:{
 		type: String
 	},
 	create_date:{
@@ -63,13 +69,15 @@ module.exports.updateUser = (id, user, options, callback) => {
 	var update = {
 		nom: user.nom,
 		prenom: user.prenom,
+		type:user.type,
 		age: user.age,
 		sexe: user.sexe,
 		email: user.email,
 		identifiant: user.identifiant,
         motdepasse:user.motdepasse,
 		image_url: user.image_url,
-		numero_compte: user.numero_compte
+		compte_courant: user.compte_courant,
+		livret_a : user.livret_a
 	}
 	User.findOneAndUpdate(query, update, options, callback);
 }

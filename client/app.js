@@ -34,9 +34,26 @@ myApp.config(function($routeProvider){
 		controller:'UsersController',
 		templateUrl: 'views/user/add_user.html'
 	})
-	.when('/user/edit/:id',{
+	.when('/users/edit/:id',{
 		controller:'UsersController',
 		templateUrl: 'views/user/edit_user.html'
+	})
+
+	.when('/comptes', {
+		controller:'ComptesController',
+		templateUrl: 'views/compte/comptes.html'
+	})
+	.when('/comptes/details/:id',{
+		controller:'ComptesController',
+		templateUrl: 'views/compte/compte_details.html'
+	})
+	.when('/comptes/add',{
+		controller:'ComptesController',
+		templateUrl: 'views/compte/add_compte.html'
+	})
+	.when('/comptes/edit/:id',{
+		controller:'ComptesController',
+		templateUrl: 'views/compte/edit_compte.html'
 	})
 
 	.when('/login',{
@@ -47,6 +64,10 @@ myApp.config(function($routeProvider){
 	.when('/register',{
 		controller:'UsersController',
 		templateUrl: 'views/user/add_user.html'
+	})
+	.when('/virement',{
+		controller:'ComptesController',
+		templateUrl: 'views/compte/virement.html'
 	})
 	.otherwise({
 		redirectTo: '/'

@@ -1,0 +1,43 @@
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+    <a href="#/comptes">Mes Comptes</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Nouveau Virement </h3>
+  </div>
+  <div class="panel-body">
+      <form ng-submit="VirementComptes(compte1,compte2)" ng-init="getComptes()">
+        <div class="form-group">
+          <label>Libelé</label>
+          <input type="text" class="form-control" ng-model="compte.solde" placeholder="Libelé du virement">
+        </div>
+         <div class="form-group">
+          <label>Compte à Debiter</label>
+            <select class="form-control">
+                <option name="compte1" value="compte.numero" ng-repeat="compte in comptes">{{compte.numero}}</option>
+            </select>
+        </div>
+         <div class="form-group">
+          <label>Compte à Crediter</label>
+           <select class="form-control">
+                <option name="compte2" value="compte.numero" ng-repeat="compte in comptes">{{compte.numero}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label>Montant </label>
+          <input type="text" class="form-control" name="montant" placeholder="Montant à transferer">
+        </div>
+        
+        <div class="form-group">
+          <label>Beneficiaire</label>
+          <input type="text" class="form-control" name="beneficiare" placeholder="Beneficiaire">
+        </div>
+       <div class="align-center">
+        <button type="submit" class="btn btn-default">Valider</button>
+       </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

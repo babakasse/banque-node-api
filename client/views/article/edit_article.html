@@ -1,37 +1,16 @@
-<a href="#/articles">Go Back</a>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Edit Article</h3>
-  </div>
-  <div class="panel-body">
+
     <div class="row">
-      <div class="col-md-12">
-      <form ng-submit="updateArticle()" ng-init="getArticle()">
+      <div class="col-md-6 col-md-offset-3">
+      <form ng-submit="updateArticle()" ng-init="getArticle()" class="form-horizontal">
+        <h1>Modification d'un Article</h1>
         <div class="form-group">
-          <label>Title</label>
+          <label>Titre</label>
           <input type="text" class="form-control" ng-model="article.title" placeholder="Title">
         </div>
+      
         <div class="form-group">
-          <label>Genre</label>
-          <select ng-model="article.genre" class="form-control">
-            <option value="Suspense">Suspense</option>
-            <option value="Drama">Drama</option>
-            <option value="Romance">Romance</option>
-            <option value="NonFiction">NonFiction</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Author</label>
+          <label>Auteur</label>
           <input type="text" class="form-control" ng-model="article.author" placeholder="Author">
-        </div>
-        <div class="form-group">
-          <label>Publisher</label>
-          <input type="text" class="form-control" ng-model="article.publisher" placeholder="Publisher">
-        </div>
-        <div class="form-group">
-          <label>Pages</label>
-          <input type="text" class="form-control" ng-model="article.pages" placeholder="Pages">
         </div>
         <div class="form-group">
           <label>Description</label>
@@ -41,14 +20,9 @@
           <label>Image URL</label>
           <input type="text" class="form-control" ng-model="article.image_url" placeholder="Image URL">
         </div>
-        <div class="form-group">
-          <label>Buy URL</label>
-          <input type="text" class="form-control" ng-model="article.buy_url" placeholder="Buy URL">
-        </div>
-       
-        <button type="submit" class="btn btn-default">Submit</button>
+         <div class="form-group">
+           <button type="submit" class="btn btn-default">Valider</button>
+         </div>
       </form>
     </div>
-    </div>
-  </div>
 </div>

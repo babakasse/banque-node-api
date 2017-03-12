@@ -1,0 +1,27 @@
+<a href="#/comptes">Accueil</a>
+<div class="panel panel-default" ng-init="getCompte()">
+  <div class="panel-heading">
+    <h3 class="panel-title"> Details du Compte numéro : {{compte.numero}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="http://ouvrir-compte-bancaire-en-ligne.fr/wp-content/uploads/2012/05/382-ouvrir-un-compte-bancaire-%C3%A0-l%C3%A9tranger-1-300x300.jpg">
+      </div>
+      <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item">Type: {{compte.type}}</li>
+          <li class="list-group-item">Solde: {{compte.solde}}</li>
+          <li class="list-group-item">Plafond: {{compte.plafond}}</li>
+          <li class="list-group-item">Propriétaire: {{compte.proprietaire}}</li>
+          <li class="list-group-item">Date de création: {{compte.create_date}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/comptes/edit/{{compte._id}}">Modifier</a> |  <a href="#" ng-click="removeCompte(compte._id)">Supprimer ce Compte</a>
+</div>
+  

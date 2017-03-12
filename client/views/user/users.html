@@ -7,11 +7,12 @@
     	<div ng-repeat="user in users">
     		<div class="col-md-6">
     			<div class="col-md-6">
-    				<h4>{{user.prenom}}</h4>
-    				<p>{{user.nom}}</p>
+    				<h4>Prenom : {{user.prenom}}</h4>
+    				<p>Nom : {{user.nom}}</p>
                     <p>Age : {{user.age}}</p>
                     <p>Sexe : {{user.sexe}}</p>
-                    <p>Numero compte : {{user.numero_compte}}</p>
+                    <p>N° compte courant: {{user.compte_courant}}</p>
+                    <p>N° compte Livret A: {{user.livret_a}}</p>
                     <p>Nom d'utilisateur : {{user.identifiant}}</p>
                     <p>Mot de passe : {{user.motdepasse}}</p>
     				<a class="btn btn-primary" href="#/users/details/{{user._id}}">Voir plus de details</a>

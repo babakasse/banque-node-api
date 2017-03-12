@@ -6,23 +6,19 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
-        <img src="{{article.image_url}}">
+         <img src="{{article.image_url}}">
       </div>
       <div class="col-md-8">
         </p>{{article.description}}</p>
         <ul class="list-group">
-          <li class="list-group-item">Genre: {{article.genre}}</li>
-          <li class="list-group-item">Author: {{article.author}}</li>
-          <li class="list-group-item">Publisher: {{article.publisher}}</li>
-          <li class="list-group-item">Pages: {{article.pages}}</li>
+          <li class="list-group-item">Auteur: {{article.author}}</li>
         </ul>
-        <a target="_blank" href="{{article.buy_url}}" class="btn btn-primary">Buy on Amazon</a>
       </div>
     </div>
   </div>
 </div>
 
 <div class="pull-right">
-  <a href="#/articles/edit/{{article._id}}">Edit</a> |  <a href="#" ng-click="removeArticle(article._id)">Delete</a>
+  <a href="#/articles/edit/{{article._id}}">Modifier</a> |  <a href="#" ng-click="removeArticle(article._id)">Supprimer</a>
 </div>
   

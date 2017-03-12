@@ -16,6 +16,14 @@
           <input type="text" class="form-control" ng-model="user.nom" placeholder="Nom">
         </div>
          <div class="form-group">
+          <label>Type</label>
+          <select ng-model="user.type" class="form-control">
+            <option value="administrateur">Administrateur</option>
+            <option value="conseiller">Conseiller</option>
+            <option value="client">Client</option>
+          </select>
+        </div>
+         <div class="form-group">
           <label>Sexe</label>
           <select ng-model="user.sexe" class="form-control">
             <option value="Homme">Homme</option>
@@ -27,9 +35,13 @@
           <label>Age</label>
           <input type="text" class="form-control" ng-model="user.age" placeholder="Age">
         </div>
+       <div class="form-group">
+          <label>N° Compte courant</label>
+          <input type="text" class="form-control" ng-model="user.compte_courant" placeholder="Votre numero de compte courant">
+        </div>
         <div class="form-group">
-          <label>Numero de compte</label>
-          <input type="text" class="form-control" ng-model="user.numero_compte" placeholder="Numero de compte">
+          <label>N° de compte Livret A</label>
+          <input type="text" class="form-control" ng-model="user.livret_a" placeholder="Votre numero de compte Livret A">
         </div>
          <div class="form-group">
           <label>Image URL</label>

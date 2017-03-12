@@ -9,12 +9,14 @@
         <img src="{{user.image_url}}">
       </div>
       <div class="col-md-8">
-        </p>{{user.description}}</p>
         <ul class="list-group">
-          <li class="list-group-item">Sexe: {{user.sexe}}</li>
-          <li class="list-group-item">Age: {{user.age}}</li>
-          <li class="list-group-item">Numero de compte: {{user.numero_compte}}</li>
-          <li class="list-group-item">Identifiant: {{user.motdepasse}}</li>
+           <li class="list-group-item">Type : {{user.type}}</li>
+          <li class="list-group-item">Sexe : {{user.sexe}}</li>
+          <li class="list-group-item">Age : {{user.age}}</li>
+          <li class="list-group-item">N° de compte courant : {{user.compte_courant}}</li>
+           <li class="list-group-item">N° de compte Livret A : {{user.livret_a}}</li>
+          <li class="list-group-item">Nom d'utilisateur : {{user.identifiant}}</li>
+           <li class="list-group-item">Mot de passe : {{user.motdepasse}}</li>
         </ul>
       </div>
     </div>
@@ -22,5 +24,5 @@
 </div>
 
 <div class="pull-right">
-  <a href="#/user/edit/{{user._id}}">Modifier</a> |  <a href="#" ng-click="removeUser(user._id)">Delete</a>
+  <a href="#/users/edit/{{user._id}}">Modifier</a> |  <a href="#" ng-click="removeUser(user._id)">Delete</a>
 </div>
